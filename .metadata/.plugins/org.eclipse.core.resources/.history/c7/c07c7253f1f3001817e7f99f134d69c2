@@ -1,0 +1,99 @@
+package com.norton.patterns_project.service;
+
+import java.util.List;
+
+import com.javacodegeeks.snippets.enterprise.hibernate.dao.BookDao;
+import com.javacodegeeks.snippets.enterprise.hibernate.model.Book;
+import com.norton.patterns_project.coffee.Coffee;
+import com.norton.patterns_project.dao.CoffeeDao;
+
+public class CoffeeService {
+	
+	    private static CoffeeDao coffeeDao;
+	
+	 
+	
+	    public CoffeeService() {
+	
+	        coffeeDao = new CoffeeDao();
+	
+	    }
+	
+	 
+	
+	    public void persist(Coffee entity) {
+	
+	    	coffeeDao.openCurrentSessionwithTransaction();
+	
+	    	coffeeDao.persist(entity);
+	
+	    	coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+
+	    public void update(Coffee entity) {
+	
+	    	coffeeDao.openCurrentSessionwithTransaction();
+	
+	    	coffeeDao.update(entity);
+	
+	    	coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+	
+	 
+	
+	    public Book findById(String id) {
+	
+	    	coffeeDao.openCurrentSession();
+	
+	        Book coffee = coffeeDao.findById(id);
+	
+	        coffeeDao.closeCurrentSession();
+	
+	        return coffee;
+	}
+	    public void delete(String id) {
+	
+	    	coffeeDao.openCurrentSessionwithTransaction();
+	
+	        Book coffee = coffeeDao.findById(id);
+	
+	        coffeeDao.delete(coffee);
+	
+	        coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+	
+	 
+	
+	    public List<Book> findAll() {
+	
+	    	coffeeDao.openCurrentSession();
+	
+	        List<Coffee> coffees = coffeeDao.findAll();
+	
+	        bookDao.closeCurrentSession();
+	
+	        return books;
+	
+	    }
+
+	    public void deleteAll() {
+	
+	        bookDao.openCurrentSessionwithTransaction();
+	
+	        bookDao.deleteAll();
+	
+	        bookDao.closeCurrentSessionwithTransaction();
+	
+	    }
+
+	    public BookDao bookDao() {
+
+	        return bookDao;
+
+	    }
+	}
+
+}

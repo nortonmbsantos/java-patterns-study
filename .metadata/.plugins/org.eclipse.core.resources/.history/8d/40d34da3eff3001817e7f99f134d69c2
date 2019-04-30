@@ -1,0 +1,5 @@
+package com.norton.patterns_project.dao;
+
+public class CoffeeDao {
+
+}

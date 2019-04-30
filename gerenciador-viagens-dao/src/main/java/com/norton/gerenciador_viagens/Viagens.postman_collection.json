@@ -1,0 +1,76 @@
+{
+	"id": "630b9493-f4f6-bb8f-6cd4-aad593f03412",
+	"name": "Viagens",
+	"description": "",
+	"order": [
+		"f23f60a3-9858-343c-4a3e-6df7de5cfa30",
+		"3202acef-9cc3-ee38-74b9-1a105d82d1a7"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1539190232125,
+	"owner": "3275248",
+	"public": false,
+	"requests": [
+		{
+			"id": "3202acef-9cc3-ee38-74b9-1a105d82d1a7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/viagens/new",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Verifica se a aplaicação está enviando e salvando\"] = responseCode.code === 201;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539190836995,
+			"name": "http://localhost:8080/api/viagens/new",
+			"description": "pass\n",
+			"collectionId": "630b9493-f4f6-bb8f-6cd4-aad593f03412",
+			"responses": [],
+			"rawModeData": "{\n\t\"localDeDestino\": \"GIG - Rio de janeiro, RJ\",\n\t\"dataPartida\": \"2018-12-15\",\n\t\"dataRetorno\": \"2019-01-12\",\n\t\"acompanhante\": \"Norton\"\n}\n"
+		},
+		{
+			"id": "f23f60a3-9858-343c-4a3e-6df7de5cfa30",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/viagens/new",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "630b9493-f4f6-bb8f-6cd4-aad593f03412",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:8080/api/viagens/new",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1539190233613,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Verifica se a validação de tamanho minimo para Local de Destino está Funcionando\"] = responseCode.code === 400;\n\nvar response = JSON.parse(responseBody);\n\ntests[\"Verfica a mensagem de validaçãp do tamanho mínimo para Local de Destino\"] = response.errors[0] === \"Local de Destino deve estar entre 3 e 40 caracteres\";",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"localDeDestino\": \"Ca\",\n\t\"dataPartida\": \"2018-01-10\",\n\t\"dataRetorno\": \"2018-01-12\",\n\t\"acompanhante\": \"Norton\"\n}\n"
+		}
+	]
+}

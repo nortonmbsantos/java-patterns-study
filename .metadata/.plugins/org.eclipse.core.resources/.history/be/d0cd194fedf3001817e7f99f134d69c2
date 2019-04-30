@@ -1,0 +1,18 @@
+package com.norton.patterns_project.dtos;
+
+import java.io.Serializable;
+
+public class CoffeeDto implements Serializable {
+
+	private static final long serialVersionUID = -8105241933692707649L;
+
+	
+	public CoffeeDto() {
+		
+	}
+	
+	public String getType() {
+		return "c";
+	}
+	
+}

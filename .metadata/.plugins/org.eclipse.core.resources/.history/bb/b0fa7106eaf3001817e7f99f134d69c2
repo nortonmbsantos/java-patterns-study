@@ -1,0 +1,134 @@
+package com.norton.patterns_project.repository;
+
+import java.util.List;
+
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public class CoffeeRepository extends JpaRepository<Coffee, Long>  {
+
+	public Page<Coffee> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Coffee> S save(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Coffee findOne(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean exists(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete(Coffee entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void delete(Iterable<? extends Coffee> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public <S extends Coffee> S findOne(Example<S> example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Coffee> Page<S> findAll(Example<S> example, Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Coffee> long count(Example<S> example) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public <S extends Coffee> boolean exists(Example<S> example) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public List<Coffee> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Coffee> findAll(Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Coffee> findAll(Iterable<Long> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Coffee> List<S> save(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void flush() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public <S extends Coffee> S saveAndFlush(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void deleteInBatch(Iterable<Coffee> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteAllInBatch() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Coffee getOne(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Coffee> List<S> findAll(Example<S> example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public <S extends Coffee> List<S> findAll(Example<S> example, Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

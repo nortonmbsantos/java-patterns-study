@@ -1,0 +1,5 @@
+package com.norton.patterns_project.coffee;
+
+public class Coffee {
+
+}

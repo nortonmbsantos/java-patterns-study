@@ -1,0 +1,8 @@
+package com.norton.patterns_project.coffee;
+
+public abstract class Coffee {
+	private String name;
+	private double value;
+	
+	
+}

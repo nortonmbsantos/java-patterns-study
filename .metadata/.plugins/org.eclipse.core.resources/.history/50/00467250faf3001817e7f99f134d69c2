@@ -1,0 +1,23 @@
+package com.norton.patterns_project.state;
+
+public class RefoundOrder implements OrderState{
+
+	@Override
+	public OrderState next() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OrderState back() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OrderState cancel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.norton.patterns_project;
+
+import com.norton.patterns_project.coffee.Coffee;
+import com.norton.patterns_project.coffee.CoffeeFactory;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Coffee coffee = new CoffeeFactory().getCoffee("c");
+    	System.out.println(coffee.getName() + ": "+ coffee.getprice());
+    	coffee = new CoffeeFactory().getCoffee("C");
+    	System.out.println(coffee.getName() + ": "+ coffee.getprice());
+    	coffee = new CoffeeFactory().getCoffee("N");
+    	System.out.println(coffee.getName() + ": "+ coffee.getprice());
+    	coffee = new CoffeeFactory().getCoffee("n");
+    	System.out.println(coffee.getName() + ": "+ coffee.getprice());
+    }
+}

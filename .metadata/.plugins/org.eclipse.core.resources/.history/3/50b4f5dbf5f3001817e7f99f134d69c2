@@ -1,0 +1,14 @@
+package com.norton.patterns_project.extra;
+
+public class Chantilly {
+	
+	public void ExtraDecorator(Extra extra) {
+		super(extra);
+	}
+	
+	  @Override
+	  public void mount(){
+	    this.extra.mount();
+	  }
+	
+}

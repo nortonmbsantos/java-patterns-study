@@ -1,0 +1,96 @@
+package com.norton.patterns_project.service;
+
+import java.util.List;
+
+import com.norton.patterns_project.coffee.Coffee;
+import com.norton.patterns_project.dao.CoffeeDao;
+
+public class CoffeeService {
+	
+	    private static CoffeeDao coffeeDao;
+	
+	 
+	
+	    public CoffeeService() {
+	
+	        coffeeDao = new CoffeeDao();
+	
+	    }
+	
+	 
+	
+	    public void persist(Coffee entity) {
+	
+	    	coffeeDao.openCurrentSessionwithTransaction();
+	
+	    	coffeeDao.persist(entity);
+	
+	    	coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+
+	    public void update(Coffee entity) {
+	
+	    	coffeeDao.openCurrentSessionwithTransaction();
+	
+	    	coffeeDao.update(entity);
+	
+	    	coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+	
+	 
+	
+	    public Coffee findById(String id) {
+	
+	    	coffeeDao.openCurrentSession();
+	
+	        Coffee coffee = coffeeDao.findById(id);
+	
+	        coffeeDao.closeCurrentSession();
+	
+	        return coffee;
+	}
+	    public void delete(String id) {
+	
+	    	coffeeDao.openCurrentSessionwithTransaction();
+	
+	        Coffee coffee = coffeeDao.findById(id);
+	
+	        coffeeDao.delete(coffee);
+	
+	        coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+	
+	 
+	
+	    public List<Coffee> findAll() {
+	
+	    	coffeeDao.openCurrentSession();
+	
+	        List<Coffee> coffees = coffeeDao.findAll();
+	
+	        coffeeDao.closeCurrentSession();
+	
+	        return coffees;
+	
+	    }
+
+	    public void deleteAll() {
+	
+	        coffeeDao.openCurrentSessionwithTransaction();
+	
+	        coffeeDao.deleteAll();
+	
+	        coffeeDao.closeCurrentSessionwithTransaction();
+	
+	    }
+
+	    public CoffeeDao coffeeDao() {
+
+	        return coffeeDao;
+
+	    }
+	}
+

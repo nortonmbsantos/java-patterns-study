@@ -1,0 +1,9 @@
+package com.norton.patterns_project.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.norton.gerenciador_viagens.entities.Viagem;
+
+public class CoffeeRepository extends JpaRepository<Viagem, Long>  {
+
+}

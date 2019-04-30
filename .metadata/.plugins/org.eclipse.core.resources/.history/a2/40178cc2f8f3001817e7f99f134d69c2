@@ -1,0 +1,8 @@
+package com.norton.patterns_project.state;
+
+public interface OrderState {
+	OrderState avance();
+
+	OrderState cancel();
+
+}

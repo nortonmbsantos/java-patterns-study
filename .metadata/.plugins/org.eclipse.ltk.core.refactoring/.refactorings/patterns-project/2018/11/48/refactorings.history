@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.norton.gerenciador_viagens.response&apos; to &apos;com.norton.patterns_project.response&apos;&#x0A;- Original project: &apos;patterns-project&apos;&#x0A;- Original element: &apos;patterns-project/src/main/java/com.norton.gerenciador_viagens.response&apos;&#x0A;- Renamed element: &apos;patterns-project/src/main/java/com.norton.patterns_project.response&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.norton.gerenciador_viagens.response&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.norton.gerenciador_viagens.response" name="com.norton.patterns_project.response" qualified="false" references="true" stamp="1543505445731" textual="false" version="1.0"/>
+</session>

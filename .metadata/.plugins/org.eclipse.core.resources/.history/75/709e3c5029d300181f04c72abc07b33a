@@ -1,0 +1,5 @@
+package norton.com.daoProject.memory.daos;
+
+public class EntityManager {
+
+}

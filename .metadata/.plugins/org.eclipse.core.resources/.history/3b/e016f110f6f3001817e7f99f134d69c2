@@ -1,0 +1,15 @@
+package com.norton.patterns_project.extra;
+
+public class Chantilly extends ExtraDecorator{
+	
+	public void ExtraDecorator(Extra extra) {
+		super();
+	}
+	
+	  @Override
+	  public void mount(){
+	    super.mount();
+	    System.out.println("Adicionando chantilly no seu café!");
+	  }
+	
+}

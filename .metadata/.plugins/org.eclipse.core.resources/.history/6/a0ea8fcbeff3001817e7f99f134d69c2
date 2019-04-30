@@ -1,0 +1,14 @@
+package com.norton.patterns_project.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class CoffeeDao {
+	private Session currentSession;
+	
+	private Transaction currentTransaction;
+
+	public CoffeeDao() {
+		
+	}
+}

@@ -1,0 +1,15 @@
+package com.norton.patterns_project.extra;
+
+import com.norton.patterns_project.coffee.Coffee;
+
+public class BaseCoffee implements Extra{
+
+	public BaseCoffee(Coffee coffee) {}
+	
+	@Override
+	public void mount() {
+		System.out.println("Adicionando seu " + cofee.getName() + "em um copo.");
+	}
+	
+
+}

@@ -1,0 +1,30 @@
+package com.norton.patterns_project.coffee;
+
+public abstract class Coffee {
+	private String name;
+	private double price;
+	
+	public Coffee(String name, double price) {
+		super();
+		this.name = name;
+		this.price = price;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public double getprice() {
+		return price;
+	}
+	
+	public void setprice(double price) {
+		this.price = price;
+	}
+	
+	
+}

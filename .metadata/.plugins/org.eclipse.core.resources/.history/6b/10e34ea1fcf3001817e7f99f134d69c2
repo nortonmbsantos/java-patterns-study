@@ -1,0 +1,32 @@
+package com.norton.patterns_project.state;
+
+import com.norton.patterns_project.extra.Extra;
+
+public class Order  implements OrderState{
+
+	OrderState orderState;
+	
+	Extra extra;
+	
+	public Order(Extra extra) {
+		this.extra = extra;
+	}
+	
+	@Override
+	public OrderState next() {
+		System.out.println("Computando pagamento");
+		return new PaymentOrder(extra);
+	}
+
+	@Override
+	public OrderState back() {
+		System.out.println("pagamento cancelado!");
+		return new CanceledOrder();
+	}
+
+	@Override
+	public OrderState cancel() {
+		System.out.println("pagamento cancelado!");
+		return new CanceledOrder();
+	}
+}

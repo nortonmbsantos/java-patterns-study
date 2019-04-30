@@ -1,0 +1,62 @@
+package com.norton.patterns_project.controller;
+
+import java.net.URI;
+import java.util.List;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.norton.patterns_project.coffee.Coffee;
+import com.norton.patterns_project.dtos.CoffeeDto;
+import com.norton.patterns_project.services.CoffeeService;
+
+
+@RestController
+@RequestMapping("/api/coffee")
+public class CoffeeController {
+
+		@Autowired
+		private CoffeeService coffeeService;
+
+		@PostMapping(path = "/new")
+		public ResponseEntity<Response<Coffee>> cadastrar(@Valid @RequestBody CoffeeDto coffeeDto, BindingResult result) {
+			Response<Coffee> response = new Response<Coffee>();
+
+			if (result.hasErrors()) {
+				result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
+				return ResponseEntity.badRequest().body(response);
+			}
+
+			Coffee viagemSalva = this.coffeeService.salvar(coffeeDto);
+			URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(viagemDto.getId())
+					.toUri();
+			response.setData(viagemSalva);
+			return ResponseEntity.created(location).body(response);
+		}
+
+		@GetMapping
+		public ResponseEntity<List<Coffee>> listar() {
+			List<Coffee> viagens = coffeeService.listar();
+			return ResponseEntity.status(HttpStatus.OK).body(viagens);
+		}
+
+		@GetMapping(path = "/{id}")
+		public ResponseEntity<Response<Coffee>> buscar(@PathVariable("id") Long id) {
+	  
+			Coffee coffee = coffeeService.buscar(id);
+			Response<Coffee> response = new Response<Coffee>();
+			response.setData(viagem);
+			return ResponseEntity.status(HttpStatus.OK).body(response);
+		}
+}

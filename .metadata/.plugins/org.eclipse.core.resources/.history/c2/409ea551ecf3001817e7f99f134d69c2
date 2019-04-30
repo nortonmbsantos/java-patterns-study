@@ -1,0 +1,9 @@
+package com.norton.patterns_project.dtos;
+
+import java.io.Serializable;
+
+public class CoffeeDto implements Serializable{
+
+	
+	
+}

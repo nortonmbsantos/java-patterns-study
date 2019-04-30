@@ -1,0 +1,36 @@
+package com.norton.patterns_project.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.norton.patterns_project.coffee.Coffee;
+import com.norton.patterns_project.coffee.CoffeeFactory;
+import com.norton.patterns_project.repository.CoffeeRepository;
+
+@Service
+public class CoffeeService {
+	@Autowired
+	private CoffeeRepository coffeeRepository;
+
+	public List<Coffee> listar() {
+		return coffeeRepository.findAll();
+	}
+
+	public Coffee salvar(CoffeeDto coffeeDto, String type) {
+
+		Coffee coffee = new CoffeeFactory(type);
+
+		return coffeeRepository.save(coffee);
+	}
+
+	public Viagem buscar(Long id) {
+		Viagem viagem = viagemRepository.findOne(id);
+
+		if (viagem == null) {
+			throw new ViagemException("Não existe esta viagem cadastrada");
+		}
+		return viagem;
+	}
+}

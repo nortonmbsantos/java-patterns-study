@@ -1,0 +1,24 @@
+package com.norton.patterns_project;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import com.norton.patterns_project.coffee.Coffee;
+import com.norton.patterns_project.coffee.CoffeeFactory;
+import com.norton.patterns_project.extra.Acucar;
+import com.norton.patterns_project.extra.BaseCoffee;
+import com.norton.patterns_project.extra.Chantilly;
+import com.norton.patterns_project.extra.Extra;
+
+@SpringBootApplication
+@Configuration
+public class App 
+{
+	public static void main(String[] args) {
+		Coffee coffee = new CoffeeFactory().getCoffee("C");
+		Extra extra = new Acucar(new Chantilly(new BaseCoffee(coffee)));
+	}
+}
